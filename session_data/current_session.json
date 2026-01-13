@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-13T12:34:20.448079",
+  "timestamp": "2026-01-13T14:29:24.244426",
   "certificate": {
     "raw_text": "UNIVERSITY OF CALIFORNIA, BERKELEY\nCollege of Engineering\n\nBACHELOR OF SCIENCE DEGREE CERTIFICATE\n\nThis is to certify that\n\nSARAH CHEN\n\nhas successfully completed all requirements for the degree of\nBACHELOR OF SCIENCE IN COMPUTER SCIENCE\n\nConferred on: May 15, 2023\n\nAcademic Performance:\n- Cumulative GPA: 3.87 / 4.00\n- Major GPA: 3.92 / 4.00\n- Total Units Completed: 128 semester units\n\nHonors and Distinctions:\n- Dean's List: Fall 2020, Spring 2021, Fall 2021, Spring 2022, Fall 2022, Spring 2023\n- Graduated with High Honors\n- Recipient of the Outstanding Senior Award in Computer Science\n- Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n\nMajor Coursework Highlights:\n- Artificial Intelligence and Machine Learning\n- Distributed Systems and Cloud Computing\n- Computer Security and Cryptography\n- Software Engineering and Development\n- Data Structures and Algorithms\n- Operating Systems Design\n\nResearch Experience:\n- Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab\n- Published paper: \"Deep Learning Approaches for Natural Language Understanding\"\n- Senior Capstone Project: \"Scalable Machine Learning Infrastructure for Healthcare\"\n\nExtracurricular Activities:\n- Vice President, Association for Computing Machinery (ACM) Student Chapter\n- Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs\n- Google Summer of Code Participant (2022)\n\nDate of Birth: March 12, 2001\nStudent ID: 3045892341\n\nThis certificate is issued under the authority of the University of California Board of Regents.\n\nDigitally verified on: May 15, 2023\nCertificate ID: UCB-ENG-CS-2023-001847\n\n___________________________                    ___________________________\nDr. Jennifer Roberts                           Dr. Michael Chang\nDean, College of Engineering                   Department Chair, Computer Science\n\nOfficial Seal: University of California, Berkeley\nEstablished 1868\n",
     "extracted_fields": {
@@ -31,21 +31,21 @@
   },
   "evaluation": {
     "criteria": {
-      "Academic Performance": 0.5,
-      "Research Experience": 0.3,
-      "Leadership": 0.2
+      "GPA": 0.4,
+      "Research": 0.3,
+      "Leadership": 0.3
     },
     "scores": {
       "GPA": 38.0,
-      "Institution Reputation": 9.0,
-      "Degree Type": 29.099999999999998
+      "Research": 24.0,
+      "Leadership": 24.0
     },
-    "final_score": 76.1
+    "final_score": 86.0
   },
   "conversation": {
-    "last_user_message": "is there another student than Sarah Chen?",
-    "last_agent_message": "\ud83d\udccb **Available Information from Certificate:**\n  - Name: SARAH CHEN (confidence: 98.0%)\n  - Degree: Bachelor of Science in Computer Science (confidence: 97.0%)\n  - Date of Conferment: May 15, 2023 (confidence: 95.0%)\n  - Major GPA: 3.92 (confidence: 95.0%)\n  - Cumulative GPA: 3.87 (confidence: 95.0%)\n  ... and 6 more fields\n\n\ud83d\udca1 Ask me about a specific field for more details!\n\n\n\n\u2713 *Answered from existing state (no re-extraction needed)*\n\ud83d\udcad [Decision: answer_from_state] User is asking for information that already exists in state with high confidence - no need to re-extract",
-    "last_reason": "User is asking for information that already exists in state with high confidence - no need to re-extract",
+    "last_user_message": "Explain your last decision",
+    "last_agent_message": "\ud83d\udccb **Explanation of My Last Action:**\n\n**Action I Took:** `rescore`\n\n**What You Said:** \"Score my certificate\"\n\n**Why I Chose This Action:**\nUser wants to calculate numerical scores and criteria are already set\n\n**Uncertainty Level:** None - I was confident in this decision\n\n**Detailed Logic:**\nI detected that you wanted scoring/evaluation. I chose this action because:\n  \u2022 Evaluation criteria were already set in state\n  \u2022 Certificate data was already extracted\n  \u2022 All prerequisites were met for calculating scores\n\nThe scoring used weighted criteria to calculate the final score based on your specified factors.\n\ud83d\udcad [Decision: explain] User is asking for an explanation of the last decision, which involves understanding how the final score was calculated based on the set criteria.",
+    "last_reason": "User is asking for an explanation of the last decision, which involves understanding how the final score was calculated based on the set criteria.",
     "uncertainty": "",
     "last_user_intent": "",
     "pending_confirmation": true,
@@ -139,6 +139,116 @@
         "user": "is there another student than Sarah Chen?",
         "agent": "\ud83d\udccb **Available Information from Certificate:**\n  - Name: SARAH CHEN (confidence: 98.0%)\n  - Degree: Bachelor of Science in Computer Science (confidence: 97.0%)\n  - Date of Conferment: May 15, 2023 (confidence: 95.0%)\n  - Major GPA: 3.92 (confidence: 95.0%)\n  - Cumulative GPA: 3.87 (confidence: 95.0%)\n  ... and 6 more fields\n\n\ud83d\udca1 Ask me about a specific field for more details!\n\n\n\n\u2713 *Answered from existing state (no re-extraction needed)*",
         "action": "answer_from_state"
+      },
+      {
+        "user": "Extract information from my certificate",
+        "agent": "\u2713 Using previously extracted certificate information:\n  - Name: SARAH CHEN\n  - Degree: Bachelor of Science in Computer Science\n  - Date of Conferment: May 15, 2023\n  - Major GPA: 3.92\n  - Cumulative GPA: 3.87\n  - Total Units Completed: 128 semester units\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022)\n  - Date of Birth: March 12, 2001\n  - Student ID: 3045892341\n\nConfidence levels:\n  - Name: 98.0%\n  - Degree: 97.0%\n  - Date of Conferment: 95.0%\n  - Major GPA: 95.0%\n  - Cumulative GPA: 95.0%\n  - Total Units Completed: 90.0%\n  - Honors: 85.0%\n  - Research Experience: 80.0%\n  - Extracurricular Activities: 80.0%\n  - Date of Birth: 90.0%\n  - Student ID: 90.0%\n\n(Data was cached from previous extraction. Say 're-extract' to force fresh extraction.)",
+        "action": "extract_information"
+      },
+      {
+        "user": "Explain your last decision",
+        "agent": "**Decision Explanation:**\n\n**Reason for last step:** User is asking for an explanation of the last decision, which requires providing reasoning or justification for a previous action or outcome.\n\n**Uncertainty:** None identified\n\n**Extracted Data:**\n  - Name: SARAH CHEN (confidence: 98.0%)\n  - Degree: Bachelor of Science in Computer Science (confidence: 97.0%)\n  - Date of Conferment: May 15, 2023 (confidence: 95.0%)\n  - Major GPA: 3.92 (confidence: 95.0%)\n  - Cumulative GPA: 3.87 (confidence: 95.0%)\n  - Total Units Completed: 128 semester units (confidence: 90.0%)\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society) (confidence: 85.0%)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare (confidence: 80.0%)\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022) (confidence: 80.0%)\n  - Date of Birth: March 12, 2001 (confidence: 90.0%)\n  - Student ID: 3045892341 (confidence: 90.0%)\n\n**Current Score:** 76.1/100\n\n**Active Criteria:**\n  - Academic Performance (weight: 0.5)\n  - Research Experience (weight: 0.3)\n  - Leadership (weight: 0.2)\n",
+        "action": "explain"
+      },
+      {
+        "user": "Extract information from my certificate",
+        "agent": "\u2713 **Using previously extracted certificate information:**\n\n  - Name: SARAH CHEN\n  - Degree: Bachelor of Science in Computer Science\n  - Date of Conferment: May 15, 2023\n  - Major GPA: 3.92\n  - Cumulative GPA: 3.87\n  - Total Units Completed: 128 semester units\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022)\n  - Date of Birth: March 12, 2001\n  - Student ID: 3045892341\n\n**Confidence levels:**\n  - Name: 98.0%\n  - Degree: 97.0%\n  - Date of Conferment: 95.0%\n  - Major GPA: 95.0%\n  - Cumulative GPA: 95.0%\n  - Total Units Completed: 90.0%\n  - Honors: 85.0%\n  - Research Experience: 80.0%\n  - Extracurricular Activities: 80.0%\n  - Date of Birth: 90.0%\n  - Student ID: 90.0%\n\n_\u2139\ufe0f Data was cached from previous extraction. Say 're-extract' to force fresh extraction._",
+        "action": "extract_information"
+      },
+      {
+        "user": "Explain your last decision",
+        "agent": "**Decision Explanation:**\n\n**Reason for last step:** User is asking for an explanation of the last decision, which requires providing reasoning or justification for a previous action or outcome.\n\n**Uncertainty:** None identified\n\n**Extracted Data:**\n  - Name: SARAH CHEN (confidence: 98.0%)\n  - Degree: Bachelor of Science in Computer Science (confidence: 97.0%)\n  - Date of Conferment: May 15, 2023 (confidence: 95.0%)\n  - Major GPA: 3.92 (confidence: 95.0%)\n  - Cumulative GPA: 3.87 (confidence: 95.0%)\n  - Total Units Completed: 128 semester units (confidence: 90.0%)\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society) (confidence: 85.0%)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare (confidence: 80.0%)\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022) (confidence: 80.0%)\n  - Date of Birth: March 12, 2001 (confidence: 90.0%)\n  - Student ID: 3045892341 (confidence: 90.0%)\n\n**Current Score:** 76.1/100\n\n**Active Criteria:**\n  - Academic Performance (weight: 0.5)\n  - Research Experience (weight: 0.3)\n  - Leadership (weight: 0.2)\n",
+        "action": "explain"
+      },
+      {
+        "user": "hello",
+        "agent": "\ud83d\udc4b **Hello! Welcome to the Agentic Certificate Evaluation AI!**\n\nI'm a fully intelligent agent that can help you evaluate academic certificates. I make dynamic decisions based on your requests - no fixed workflows!\n\n**Here's what I can do for you:**\n\n\ud83d\udcc4 **Extract Information**\n   - Parse and extract data from your certificate\n   - Identify GPA, degrees, honors, research, leadership, and more\n   - Provide confidence levels for each extracted field\n\n\u2b50 **Set Evaluation Criteria**\n   - Define what factors matter (GPA, Research, Leadership, etc.)\n   - Set custom weights for each criterion\n   - Modify criteria anytime during our conversation\n\n\ud83c\udfaf **Score Certificates**\n   - Calculate weighted scores based on your criteria\n   - Re-score after making changes\n   - Get detailed breakdowns of scores\n\n\ud83d\udca1 **Explain My Reasoning**\n   - Understand why I made specific decisions\n   - See my confidence levels and uncertainties\n   - Get transparent, explainable AI decisions\n\n\ud83d\udd04 **User Control**\n   - Correct my extractions if I make mistakes\n   - Challenge my assessments\n   - Reorder steps - I adapt to YOU, not a fixed workflow!\n\n**To get started, try saying:**\n\u2022 'Extract information from my certificate'\n\u2022 'Set evaluation criteria: GPA 40%, Research 30%, Leadership 30%'\n\u2022 'Score my certificate'\n\u2022 'Explain your reasoning'\n\nWhat would you like to do? \ud83d\ude0a",
+        "action": "explain"
+      },
+      {
+        "user": "explain your last action",
+        "agent": "**Decision Explanation:**\n\n**Reason for last step:** User is asking for an explanation of the last action, which requires providing reasoning or justification for a previous action or outcome.\n\n**Uncertainty:** None identified\n\n**Extracted Data:**\n  - Name: SARAH CHEN (confidence: 98.0%)\n  - Degree: Bachelor of Science in Computer Science (confidence: 97.0%)\n  - Date of Conferment: May 15, 2023 (confidence: 95.0%)\n  - Major GPA: 3.92 (confidence: 95.0%)\n  - Cumulative GPA: 3.87 (confidence: 95.0%)\n  - Total Units Completed: 128 semester units (confidence: 90.0%)\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society) (confidence: 85.0%)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare (confidence: 80.0%)\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022) (confidence: 80.0%)\n  - Date of Birth: March 12, 2001 (confidence: 90.0%)\n  - Student ID: 3045892341 (confidence: 90.0%)\n\n**Current Score:** 76.1/100\n\n**Active Criteria:**\n  - Academic Performance (weight: 0.5)\n  - Research Experience (weight: 0.3)\n  - Leadership (weight: 0.2)\n",
+        "action": "explain"
+      },
+      {
+        "user": "hello",
+        "agent": "\ud83d\udc4b **Hello! Welcome to the Agentic Certificate Evaluation AI!**\n\nI'm a fully intelligent agent that can help you evaluate academic certificates. I make dynamic decisions based on your requests - no fixed workflows!\n\n**Here's what I can do for you:**\n\n\ud83d\udcc4 **Extract Information**\n   - Parse and extract data from your certificate\n   - Identify GPA, degrees, honors, research, leadership, and more\n   - Provide confidence levels for each extracted field\n\n\u2b50 **Set Evaluation Criteria**\n   - Define what factors matter (GPA, Research, Leadership, etc.)\n   - Set custom weights for each criterion\n   - Modify criteria anytime during our conversation\n\n\ud83c\udfaf **Score Certificates**\n   - Calculate weighted scores based on your criteria\n   - Re-score after making changes\n   - Get detailed breakdowns of scores\n\n\ud83d\udca1 **Explain My Reasoning**\n   - Understand why I made specific decisions\n   - See my confidence levels and uncertainties\n   - Get transparent, explainable AI decisions\n\n\ud83d\udd04 **User Control**\n   - Correct my extractions if I make mistakes\n   - Challenge my assessments\n   - Reorder steps - I adapt to YOU, not a fixed workflow!\n\n**To get started, try saying:**\n\u2022 'Extract information from my certificate'\n\u2022 'Set evaluation criteria: GPA 40%, Research 30%, Leadership 30%'\n\u2022 'Score my certificate'\n\u2022 'Explain your reasoning'\n\nWhat would you like to do? \ud83d\ude0a",
+        "action": "explain"
+      },
+      {
+        "user": "explain your last action",
+        "agent": "\ud83d\udccb **Explanation of My Last Action:**\n\n**Action I Took:** `explain`\n\n**What You Said:** \"explain your last action\"\n\n**Why I Chose This Action:**\nUser provided a greeting, should welcome them and explain capabilities\n\n**Uncertainty Level:** None - I was confident in this decision\n\n**Detailed Logic:**\nI detected that your message was a greeting or general question. For such inputs, the 'explain' action is most appropriate because it:\n  \u2022 Provides a friendly welcome to new users\n  \u2022 Explains my capabilities and how to use me\n  \u2022 Sets the foundation for our conversation\n  \u2022 Doesn't make assumptions about what you want to do\n\nThis demonstrates agentic intelligence - adapting my response to the conversational context rather than following a fixed script.",
+        "action": "explain"
+      },
+      {
+        "user": "Set criteria: GPA 40%, Research 30%, Leadership 30%",
+        "agent": "\u2713 Set 3 evaluation criteria with weights\n\n**Active Evaluation Criteria:**\n  - GPA: weight=0.40\n  - Research: weight=0.30\n  - Leadership: weight=0.30\n\nThe certificate will now be evaluated based on these criteria.\nYou can modify criteria anytime or ask me to re-score the certificate.",
+        "action": "validate_criteria"
+      },
+      {
+        "user": "explain your last action",
+        "agent": "\ud83d\udccb **Explanation of My Last Action:**\n\n**Action I Took:** `validate_criteria`\n\n**What You Said:** \"explain your last action\"\n\n**Why I Chose This Action:**\nUser explicitly provided new evaluation criteria (GPA 40%, Research 30%, Leadership 30%) that need to be validated and updated in the Evaluation State\n\n**Uncertainty Level:** None - I was confident in this decision\n\n**Detailed Logic:**\nI detected that you wanted to set or modify evaluation criteria. I chose this action because:\n  \u2022 You specified what factors to evaluate\n  \u2022 You may have provided weights/percentages\n  \u2022 This establishes the framework for scoring\n\nSetting criteria before scoring ensures the evaluation matches your priorities.",
+        "action": "explain"
+      },
+      {
+        "user": "Set criteria: GPA 40%, Research 30%, Leadership 30%",
+        "agent": "\ud83d\udc4b **Hello! Welcome to the Agentic Certificate Evaluation AI!**\n\nI'm a fully intelligent agent that can help you evaluate academic certificates. I make dynamic decisions based on your requests - no fixed workflows!\n\n**Here's what I can do for you:**\n\n\ud83d\udcc4 **Extract Information**\n   - Parse and extract data from your certificate\n   - Identify GPA, degrees, honors, research, leadership, and more\n   - Provide confidence levels for each extracted field\n\n\u2b50 **Set Evaluation Criteria**\n   - Define what factors matter (GPA, Research, Leadership, etc.)\n   - Set custom weights for each criterion\n   - Modify criteria anytime during our conversation\n\n\ud83c\udfaf **Score Certificates**\n   - Calculate weighted scores based on your criteria\n   - Re-score after making changes\n   - Get detailed breakdowns of scores\n\n\ud83d\udca1 **Explain My Reasoning**\n   - Understand why I made specific decisions\n   - See my confidence levels and uncertainties\n   - Get transparent, explainable AI decisions\n\n\ud83d\udd04 **User Control**\n   - Correct my extractions if I make mistakes\n   - Challenge my assessments\n   - Reorder steps - I adapt to YOU, not a fixed workflow!\n\n**To get started, try saying:**\n\u2022 'Extract information from my certificate'\n\u2022 'Set evaluation criteria: GPA 40%, Research 30%, Leadership 30%'\n\u2022 'Score my certificate'\n\u2022 'Explain your reasoning'\n\nWhat would you like to do? \ud83d\ude0a",
+        "action": "explain"
+      },
+      {
+        "user": "Extract information from my certificate",
+        "agent": "\u2713 **Using previously extracted certificate information:**\n\n  - Name: SARAH CHEN\n  - Degree: Bachelor of Science in Computer Science\n  - Date of Conferment: May 15, 2023\n  - Major GPA: 3.92\n  - Cumulative GPA: 3.87\n  - Total Units Completed: 128 semester units\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022)\n  - Date of Birth: March 12, 2001\n  - Student ID: 3045892341\n\n**Confidence levels:**\n  - Name: 98.0%\n  - Degree: 97.0%\n  - Date of Conferment: 95.0%\n  - Major GPA: 95.0%\n  - Cumulative GPA: 95.0%\n  - Total Units Completed: 90.0%\n  - Honors: 85.0%\n  - Research Experience: 80.0%\n  - Extracurricular Activities: 80.0%\n  - Date of Birth: 90.0%\n  - Student ID: 90.0%\n\n_\u2139\ufe0f Data was cached from previous extraction. Say 're-extract' to force fresh extraction._",
+        "action": "extract_information"
+      },
+      {
+        "user": "Set criteria: GPA 40%, Research 30%, Leadership 30%",
+        "agent": "\u2713 Set 3 evaluation criteria with weights\n\n**Active Evaluation Criteria:**\n  - GPA: weight=0.40\n  - Research: weight=0.30\n  - Leadership: weight=0.30\n\nThe certificate will now be evaluated based on these criteria.\nYou can modify criteria anytime or ask me to re-score the certificate.",
+        "action": "validate_criteria"
+      },
+      {
+        "user": "Score my certificate",
+        "agent": "\u2713 Certificate re-scored based on current criteria:\n\n  - GPA: 38.0 (weight: 0.40)\n  - Research: 24.0 (weight: 0.30)\n  - Leadership: 24.0 (weight: 0.30)\n\n**Final Weighted Score: 86.0/100**",
+        "action": "rescore"
+      },
+      {
+        "user": "Explain your last decision",
+        "agent": "\ud83d\udccb **Explanation of My Last Action:**\n\n**Action I Took:** `rescore`\n\n**What You Said:** \"Score my certificate\"\n\n**Why I Chose This Action:**\nUser wants to calculate numerical scores and criteria are already set\n\n**Uncertainty Level:** None - I was confident in this decision\n\n**Detailed Logic:**\nI detected that you wanted scoring/evaluation. I chose this action because:\n  \u2022 Evaluation criteria were already set in state\n  \u2022 Certificate data was already extracted\n  \u2022 All prerequisites were met for calculating scores\n\nThe scoring used weighted criteria to calculate the final score based on your specified factors.",
+        "action": "explain"
+      },
+      {
+        "user": "bye",
+        "agent": "\ud83d\udc4b **Hello! Welcome to the Agentic Certificate Evaluation AI!**\n\nI'm a fully intelligent agent that can help you evaluate academic certificates. I make dynamic decisions based on your requests - no fixed workflows!\n\n**Here's what I can do for you:**\n\n\ud83d\udcc4 **Extract Information**\n   - Parse and extract data from your certificate\n   - Identify GPA, degrees, honors, research, leadership, and more\n   - Provide confidence levels for each extracted field\n\n\u2b50 **Set Evaluation Criteria**\n   - Define what factors matter (GPA, Research, Leadership, etc.)\n   - Set custom weights for each criterion\n   - Modify criteria anytime during our conversation\n\n\ud83c\udfaf **Score Certificates**\n   - Calculate weighted scores based on your criteria\n   - Re-score after making changes\n   - Get detailed breakdowns of scores\n\n\ud83d\udca1 **Explain My Reasoning**\n   - Understand why I made specific decisions\n   - See my confidence levels and uncertainties\n   - Get transparent, explainable AI decisions\n\n\ud83d\udd04 **User Control**\n   - Correct my extractions if I make mistakes\n   - Challenge my assessments\n   - Reorder steps - I adapt to YOU, not a fixed workflow!\n\n**To get started, try saying:**\n\u2022 'Extract information from my certificate'\n\u2022 'Set evaluation criteria: GPA 40%, Research 30%, Leadership 30%'\n\u2022 'Score my certificate'\n\u2022 'Explain your reasoning'\n\nWhat would you like to do? \ud83d\ude0a",
+        "action": "explain"
+      },
+      {
+        "user": "list the  name of the students in the certificate",
+        "agent": "\ud83d\udcdd The student's name is **SARAH CHEN** (confidence: 98.0%)\n\n\n\n\u2713 *Answered from existing state (no re-extraction needed)*",
+        "action": "answer_from_state"
+      },
+      {
+        "user": "ok thank you for the infromation",
+        "agent": "**Decision Explanation:**\n\n**Reason for last step:** User provided a casual conversation response, should respond with a greeting or guidance\n\n**Uncertainty:** None identified\n\n**Extracted Data:**\n  - Name: SARAH CHEN (confidence: 98.0%)\n  - Degree: Bachelor of Science in Computer Science (confidence: 97.0%)\n  - Date of Conferment: May 15, 2023 (confidence: 95.0%)\n  - Major GPA: 3.92 (confidence: 95.0%)\n  - Cumulative GPA: 3.87 (confidence: 95.0%)\n  - Total Units Completed: 128 semester units (confidence: 90.0%)\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society) (confidence: 85.0%)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare (confidence: 80.0%)\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022) (confidence: 80.0%)\n  - Date of Birth: March 12, 2001 (confidence: 90.0%)\n  - Student ID: 3045892341 (confidence: 90.0%)\n\n**Current Score:** 86.0/100\n\n**Active Criteria:**\n  - GPA (weight: 0.4)\n  - Research (weight: 0.3)\n  - Leadership (weight: 0.3)\n",
+        "action": "explain"
+      },
+      {
+        "user": "hello",
+        "agent": "\ud83d\udc4b **Hello! Welcome to the Agentic Certificate Evaluation AI!**\n\nI'm a fully intelligent agent that can help you evaluate academic certificates. I make dynamic decisions based on your requests - no fixed workflows!\n\n**Here's what I can do for you:**\n\n\ud83d\udcc4 **Extract Information**\n   - Parse and extract data from your certificate\n   - Identify GPA, degrees, honors, research, leadership, and more\n   - Provide confidence levels for each extracted field\n\n\u2b50 **Set Evaluation Criteria**\n   - Define what factors matter (GPA, Research, Leadership, etc.)\n   - Set custom weights for each criterion\n   - Modify criteria anytime during our conversation\n\n\ud83c\udfaf **Score Certificates**\n   - Calculate weighted scores based on your criteria\n   - Re-score after making changes\n   - Get detailed breakdowns of scores\n\n\ud83d\udca1 **Explain My Reasoning**\n   - Understand why I made specific decisions\n   - See my confidence levels and uncertainties\n   - Get transparent, explainable AI decisions\n\n\ud83d\udd04 **User Control**\n   - Correct my extractions if I make mistakes\n   - Challenge my assessments\n   - Reorder steps - I adapt to YOU, not a fixed workflow!\n\n**To get started, try saying:**\n\u2022 'Extract information from my certificate'\n\u2022 'Set evaluation criteria: GPA 40%, Research 30%, Leadership 30%'\n\u2022 'Score my certificate'\n\u2022 'Explain your reasoning'\n\nWhat would you like to do? \ud83d\ude0a",
+        "action": "explain"
+      },
+      {
+        "user": "bye",
+        "agent": "\ud83d\udc4b **Goodbye!**\n\nThank you for using the Agentic Certificate Evaluation AI!\n\n**Session Summary:**\n  \u2022 Total exchanges: 37\n  \u2022 Extracted fields: 11\n  \u2022 Evaluation criteria set: 3\n  \u2022 Final score: 86.0/100\n\n\u2713 All your data has been saved and will be available when you return.\n\nFeel free to come back anytime to continue evaluating certificates! \ud83d\ude0a",
+        "action": "explain"
+      },
+      {
+        "user": "Score my certificate",
+        "agent": "\u2713 Certificate re-scored based on current criteria:\n\n  - GPA: 38.0 (weight: 0.40)\n  - Research: 24.0 (weight: 0.30)\n  - Leadership: 24.0 (weight: 0.30)\n\n**Final Weighted Score: 86.0/100**",
+        "action": "rescore"
+      },
+      {
+        "user": "Explain your last decision",
+        "agent": "\ud83d\udccb **Explanation of My Last Action:**\n\n**Action I Took:** `rescore`\n\n**What You Said:** \"Score my certificate\"\n\n**Why I Chose This Action:**\nUser wants to calculate numerical scores and criteria are already set\n\n**Uncertainty Level:** None - I was confident in this decision\n\n**Detailed Logic:**\nI detected that you wanted scoring/evaluation. I chose this action because:\n  \u2022 Evaluation criteria were already set in state\n  \u2022 Certificate data was already extracted\n  \u2022 All prerequisites were met for calculating scores\n\nThe scoring used weighted criteria to calculate the final score based on your specified factors.",
+        "action": "explain"
       }
     ],
     "reasoning_history": [
@@ -249,6 +359,138 @@
         "reason": "User is asking for information that already exists in state with high confidence - no need to re-extract",
         "uncertainty": "",
         "context": "User said: is there another student than Sarah Chen?"
+      },
+      {
+        "decision": "extract_information",
+        "reason": "User explicitly requested to extract information, despite some fields already being extracted, implying a need or desire for potentially more or all information to be considered or re-evaluated.",
+        "uncertainty": "",
+        "context": "User said: Extract information from my certificate"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the last decision, which requires providing reasoning or justification for a previous action or outcome.",
+        "uncertainty": "",
+        "context": "User said: Explain your last decision"
+      },
+      {
+        "decision": "extract_information",
+        "reason": "User explicitly requested to extract information, and while data already exists, the system can efficiently provide the cached data in response to the user's request, treating previous outputs as living context.",
+        "uncertainty": "",
+        "context": "User said: Extract information from my certificate"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the last decision, which requires providing reasoning or justification for a previous action or outcome.",
+        "uncertainty": "",
+        "context": "User said: Explain your last decision"
+      },
+      {
+        "decision": "explain",
+        "reason": "User provided a greeting, should welcome them and explain capabilities",
+        "uncertainty": "",
+        "context": "User said: hello"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the last action, which requires providing reasoning or justification for a previous action or outcome.",
+        "uncertainty": "",
+        "context": "User said: explain your last action"
+      },
+      {
+        "decision": "explain",
+        "reason": "User provided a greeting, should welcome them and explain capabilities",
+        "uncertainty": "",
+        "context": "User said: hello"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the last action, which requires providing reasoning or justification for a previous action or outcome.",
+        "uncertainty": "",
+        "context": "User said: explain your last action"
+      },
+      {
+        "decision": "validate_criteria",
+        "reason": "User explicitly provided new evaluation criteria (GPA 40%, Research 30%, Leadership 30%) that need to be validated and updated in the Evaluation State",
+        "uncertainty": "",
+        "context": "User said: Set criteria: GPA 40%, Research 30%, Leadership 30%"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the system's last action, which was to explain its capabilities and welcome the user. The system should provide a detailed explanation of its decision-making process.",
+        "uncertainty": "",
+        "context": "User said: explain your last action"
+      },
+      {
+        "decision": "explain",
+        "reason": "The user's request to set criteria is acknowledged, but since these criteria are already set and reflected in the Evaluation State, the best action is to explain and confirm the current state, treating previous outputs as living context.",
+        "uncertainty": "",
+        "context": "User said: Set criteria: GPA 40%, Research 30%, Leadership 30%"
+      },
+      {
+        "decision": "extract_information",
+        "reason": "User explicitly requested to extract information from their certificate, indicating a need to either verify existing data or extract more, despite existing extracted fields.",
+        "uncertainty": "",
+        "context": "User said: Extract information from my certificate"
+      },
+      {
+        "decision": "validate_criteria",
+        "reason": "User is explicitly defining evaluation criteria, which needs to be validated and updated in the Evaluation State",
+        "uncertainty": "",
+        "context": "User said: Set criteria: GPA 40%, Research 30%, Leadership 30%"
+      },
+      {
+        "decision": "rescore",
+        "reason": "User wants to calculate numerical scores and criteria are already set",
+        "uncertainty": "",
+        "context": "User said: Score my certificate"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the previous scoring decision, which requires detailing how the final score was calculated based on the set criteria.",
+        "uncertainty": "",
+        "context": "User said: Explain your last decision"
+      },
+      {
+        "decision": "explain",
+        "reason": "User input 'bye' is treated as a casual conversation or greeting for which explain is the designated response, although it signifies the end of the conversation.",
+        "uncertainty": "User input implies the end of the interaction, but there's no specific action defined for farewells in the provided rules.",
+        "context": "User said: bye"
+      },
+      {
+        "decision": "answer_from_state",
+        "reason": "User is asking for information ('name of the students') that already exists in the state with high confidence, specifically the 'Name' field which has been extracted as 'SARAH CHEN'.",
+        "uncertainty": "",
+        "context": "User said: list the  name of the students in the certificate"
+      },
+      {
+        "decision": "explain",
+        "reason": "User provided a casual conversation response, should respond with a greeting or guidance",
+        "uncertainty": "",
+        "context": "User said: ok thank you for the infromation"
+      },
+      {
+        "decision": "explain",
+        "reason": "User provided a greeting, should welcome them and explain capabilities",
+        "uncertainty": "",
+        "context": "User said: hello"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is ending the conversation, should provide friendly farewell with session summary",
+        "uncertainty": "",
+        "context": "User said: bye"
+      },
+      {
+        "decision": "rescore",
+        "reason": "User wants to calculate numerical scores and criteria are already set",
+        "uncertainty": "",
+        "context": "User said: Score my certificate"
+      },
+      {
+        "decision": "explain",
+        "reason": "User is asking for an explanation of the last decision, which involves understanding how the final score was calculated based on the set criteria.",
+        "uncertainty": "",
+        "context": "User said: Explain your last decision"
       }
     ]
   }

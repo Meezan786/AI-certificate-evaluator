@@ -29,130 +29,199 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Modern color scheme with good contrast */
+    /* Professional Black & White Theme with Subtle Accents */
+
+    /* Main app background */
     .stApp {
-        background-color: #ffffff;
-        color: #2c3e50;
+        background-color: #0a0a0a;
+        color: #ffffff;
+    }
+
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background-color: #1a1a1a;
+        border-right: 1px solid #2a2a2a;
+    }
+
+    [data-testid="stSidebar"] * {
+        color: #e0e0e0 !important;
     }
 
     /* Main header */
     .main-header {
         font-size: 2.5rem;
-        font-weight: bold;
-        color: #2c3e50;
-        text-align: center;
-        padding: 1rem 0;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    /* Agent messages - blue theme */
-    .agent-message {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-weight: 700;
         color: #ffffff;
-        padding: 1rem;
-        border-radius: 15px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #4a90e2;
-        box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+        text-align: center;
+        padding: 2rem 0 1rem 0;
+        letter-spacing: -0.5px;
+        border-bottom: 2px solid #2a2a2a;
+        margin-bottom: 1rem;
     }
 
-    /* User messages - gray theme */
+    .main-header::before {
+        content: "🎓 ";
+    }
+
+    /* Agent messages - Clean white on dark */
+    .agent-message {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1rem 0;
+        border-left: 3px solid #ffffff;
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* User messages - Subtle gray */
     .user-message {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        color: #2c3e50;
-        padding: 1rem;
-        border-radius: 15px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #6c757d;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        padding: 1.2rem;
+        border-radius: 12px;
+        margin: 1rem 0;
+        border-left: 3px solid #666666;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        font-size: 0.95rem;
     }
 
-    /* Reasoning box - yellow/orange theme */
+    /* Reasoning box - Minimal accent */
     .reasoning-box {
-        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-        color: #856404;
-        padding: 0.8rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        font-size: 0.9rem;
-        border-left: 3px solid #ffc107;
-        box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
-    }
-
-    /* State box - light blue theme */
-    .state-box {
-        background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
-        color: #0c5460;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #17a2b8;
-        box-shadow: 0 2px 8px rgba(23, 162, 184, 0.2);
-    }
-
-    /* Success box - green theme */
-    .success-box {
-        background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-        color: #155724;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #28a745;
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
-    }
-
-    /* Error box - red theme */
-    .error-box {
-        background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-        color: #721c24;
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #dc3545;
-        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
-    }
-
-    /* Sidebar styling */
-    .sidebar .sidebar-content {
-        background-color: #f8f9fa;
-        color: #2c3e50;
-    }
-
-    /* General text improvements */
-    .stMarkdown, .stText, p, div, span {
-        color: #2c3e50;
-    }
-
-    /* Button styling */
-    .stButton button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
+        background-color: #1a1a1a;
+        color: #999999;
+        padding: 0.9rem;
         border-radius: 8px;
-        padding: 0.5rem 1rem;
-        font-weight: 500;
-        transition: all 0.3s ease;
+        margin: 0.5rem 0;
+        font-size: 0.85rem;
+        border-left: 2px solid #444444;
+        font-style: italic;
+    }
+
+    /* State box - Professional info display */
+    .state-box {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+        padding: 1.2rem;
+        border-radius: 10px;
+        margin: 0.8rem 0;
+        border: 1px solid #2a2a2a;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Success box - Clean success indicator */
+    .success-box {
+        background-color: #0d2818;
+        color: #a8e6cf;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 0.5rem 0;
+        border-left: 3px solid #4caf50;
+        font-size: 0.9rem;
+    }
+
+    /* Error box - Clean error indicator */
+    .error-box {
+        background-color: #2a1515;
+        color: #ff9999;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 0.5rem 0;
+        border-left: 3px solid #f44336;
+        font-size: 0.9rem;
+    }
+
+    /* General text styling */
+    .stMarkdown, .stText, p, div, span {
+        color: #e0e0e0;
+    }
+
+    /* Button styling - Professional minimal */
+    .stButton button {
+        background-color: #ffffff;
+        color: #0a0a0a;
+        border: none;
+        border-radius: 6px;
+        padding: 0.6rem 1.2rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
     }
 
     .stButton button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        background-color: #e0e0e0;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
     }
 
-    /* Input styling */
-    .stTextInput input, .stTextArea textarea {
-        border: 2px solid #e9ecef;
+    /* Secondary buttons */
+    .stButton button[kind="secondary"] {
+        background-color: #2a2a2a;
+        color: #ffffff;
+        border: 1px solid #444444;
+    }
+
+    .stButton button[kind="secondary"]:hover {
+        background-color: #333333;
+        border-color: #666666;
+    }
+
+    /* Input styling - Clean minimal */
+    .stTextInput input, .stTextArea textarea, .stChatInput input {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
         border-radius: 8px;
-        padding: 0.5rem;
-        color: #2c3e50;
+        padding: 0.7rem;
+        color: #ffffff;
+        transition: all 0.2s ease;
     }
 
-    .stTextInput input:focus, .stTextArea textarea:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    .stTextInput input:focus, .stTextArea textarea:focus, .stChatInput input:focus {
+        border-color: #ffffff;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+        background-color: #1f1f1f;
+    }
+
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+    }
+
+    /* Metrics */
+    [data-testid="stMetricValue"] {
+        color: #ffffff;
+        font-size: 1.8rem;
+    }
+
+    [data-testid="stMetricLabel"] {
+        color: #999999;
+    }
+
+    /* Progress bars */
+    .stProgress > div > div > div {
+        background-color: #ffffff;
+    }
+
+    /* Dividers */
+    hr {
+        border-color: #2a2a2a;
+    }
+
+    /* Checkbox */
+    .stCheckbox label {
+        color: #e0e0e0;
+    }
+
+    /* Info/Warning/Success messages */
+    .stAlert {
+        background-color: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        color: #e0e0e0;
     }
     </style>
     """,
@@ -204,18 +273,20 @@ if hasattr(st, "session_state"):
 
 # Header
 st.markdown(
-    '<div class="main-header">🎓 Agentic Certificate Evaluation AI</div>',
+    '<div class="main-header">Agentic Certificate Evaluation AI</div>',
     unsafe_allow_html=True,
 )
 st.markdown(
-    "<p style='text-align: center; color: #666;'>A fully agentic system with dynamic action selection and persistent context</p>",
+    "<p style='text-align: center; color: #999999; font-size: 0.95rem; margin-top: -0.5rem;'>A fully agentic system with dynamic action selection and persistent context</p>",
     unsafe_allow_html=True,
 )
-st.markdown("---")
+st.markdown(
+    "<hr style='margin: 1.5rem 0; border-color: #2a2a2a;'>", unsafe_allow_html=True
+)
 
 # Sidebar
 with st.sidebar:
-    st.header("📊 System State")
+    st.markdown("### 📊 System State")
 
     # Certificate State
     with st.expander("📄 Certificate State", expanded=False):
@@ -400,27 +471,37 @@ st.markdown("---")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.info(
+    st.markdown(
         """
-    **💡 Try These:**
-    - Extract information from my certificate
-    - Set evaluation criteria
-    - Score my certificate
-    - Change criteria weights
-    - Explain your reasoning
-    """
+        <div class="state-box">
+        <b style="color: #ffffff;">💡 Try These:</b><br><br>
+        <span style="color: #cccccc;">
+        • Extract information from my certificate<br>
+        • Set evaluation criteria<br>
+        • Score my certificate<br>
+        • Change criteria weights<br>
+        • Explain your reasoning
+        </span>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
 with col2:
-    st.success(
+    st.markdown(
         """
-    **✨ Agentic Features:**
-    - Dynamic action selection
-    - Persistent state
-    - Non-linear flow
-    - User corrections accepted
-    - Explainable decisions
-    """
+        <div class="state-box">
+        <b style="color: #ffffff;">✨ Agentic Features:</b><br><br>
+        <span style="color: #cccccc;">
+        • Dynamic action selection<br>
+        • Persistent state<br>
+        • Non-linear flow<br>
+        • User corrections accepted<br>
+        • Explainable decisions
+        </span>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
 with col3:
@@ -429,18 +510,28 @@ with col3:
         st.markdown(
             f"""
         <div class="state-box">
-        <b>📝 Last Action:</b><br>
-        {recent.get("action", "N/A")}
+        <b style="color: #ffffff;">📝 Last Action:</b><br><br>
+        <span style="color: #cccccc;">{recent.get("action", "N/A")}</span>
         </div>
         """,
             unsafe_allow_html=True,
         )
     else:
-        st.warning("**🚀 Start chatting** to see the agent in action!")
+        st.markdown(
+            """
+            <div class="state-box">
+            <b style="color: #ffffff;">🚀 Start chatting</b><br>
+            <span style="color: #999999; font-size: 0.85rem;">to see the agent in action!</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
 # Footer
-st.markdown("---")
 st.markdown(
-    "<p style='text-align: center; color: #999; font-size: 0.9rem;'>Built by MEEZAN using LangChain, LangGraph, and Streamlit | Fully Agentic System</p>",
+    "<hr style='margin: 2rem 0; border-color: #2a2a2a;'>", unsafe_allow_html=True
+)
+st.markdown(
+    "<p style='text-align: center; color: #666666; font-size: 0.85rem;'>Built by MEEZAN using LangChain, LangGraph, and Streamlit | Fully Agentic System</p>",
     unsafe_allow_html=True,
 )
