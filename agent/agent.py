@@ -9,9 +9,7 @@ from actions.score import rescore_certificate
 from actions.validate import validate_criteria
 from agent.prompts import AGENT_DECISION_PROMPT
 from llm.json_utils import safe_json_parse
-from llm.llm_client import get_llm
-
-llm = get_llm()
+from llm.llm_client import get_llm_with_fallback
 
 
 def agent_node(state):
@@ -55,8 +53,13 @@ Conversation State:
 - If user asks to score AND criteria_count > 0 → choose "rescore"
 """
 
-    # Get LLM decision with safe parsing
-    response = llm.invoke(decision_prompt)
+    # Get LLM decision with safe parsing - use dynamic LLM with fallback
+    try:
+        llm = get_llm_with_fallback()
+        response = llm.invoke(decision_prompt)
+    except Exception as e:
+        # If all models fail, return error explanation
+        return _handle_llm_failure(state, str(e))
     decision = safe_json_parse(
         response.content,
         fallback={
@@ -100,13 +103,27 @@ Conversation State:
     elif action == "pause":
         state = pause_execution(state)
     else:  # Default to explain
-        state = explain_decision(state)
+        return explain_decision(state)
+
+
+def _handle_llm_failure(state, error_msg):
+    """Handle case when all LLM models are exhausted."""
+    state["conversation"].last_agent_message = (
+        f"⚠️ **Temporary Service Limitation**\n\n"
+        f"All available AI models have reached their rate limits. This happens during high usage.\n\n"
+        f"**What you can do:**\n"
+        f"• Wait a few minutes and try again\n"
+        f"• Your data is saved and will be available\n"
+        f"• Or come back later - your session persists!\n\n"
+        f"_Technical details: {error_msg[:100]}_"
+    )
+    return state
 
     # Add reasoning summary to agent message for better explainability
     reasoning_summary = f"\n💭 [Decision: {action}] {state['conversation'].last_reason}"
     if state["conversation"].uncertainty:
         reasoning_summary += f" | Uncertainty: {state['conversation'].uncertainty}"
-    
+
     # Append to the last agent message
     state["conversation"].last_agent_message += reasoning_summary
 
