@@ -1,0 +1,57 @@
+UNIVERSITY OF CALIFORNIA, BERKELEY
+College of Engineering
+
+BACHELOR OF SCIENCE DEGREE CERTIFICATE
+
+This is to certify that
+
+SARAH CHEN
+
+has successfully completed all requirements for the degree of
+BACHELOR OF SCIENCE IN COMPUTER SCIENCE
+
+Conferred on: May 15, 2023
+
+Academic Performance:
+- Cumulative GPA: 3.87 / 4.00
+- Major GPA: 3.92 / 4.00
+- Total Units Completed: 128 semester units
+
+Honors and Distinctions:
+- Dean's List: Fall 2020, Spring 2021, Fall 2021, Spring 2022, Fall 2022, Spring 2023
+- Graduated with High Honors
+- Recipient of the Outstanding Senior Award in Computer Science
+- Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)
+
+Major Coursework Highlights:
+- Artificial Intelligence and Machine Learning
+- Distributed Systems and Cloud Computing
+- Computer Security and Cryptography
+- Software Engineering and Development
+- Data Structures and Algorithms
+- Operating Systems Design
+
+Research Experience:
+- Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab
+- Published paper: "Deep Learning Approaches for Natural Language Understanding"
+- Senior Capstone Project: "Scalable Machine Learning Infrastructure for Healthcare"
+
+Extracurricular Activities:
+- Vice President, Association for Computing Machinery (ACM) Student Chapter
+- Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs
+- Google Summer of Code Participant (2022)
+
+Date of Birth: March 12, 2001
+Student ID: 3045892341
+
+This certificate is issued under the authority of the University of California Board of Regents.
+
+Digitally verified on: May 15, 2023
+Certificate ID: UCB-ENG-CS-2023-001847
+
+___________________________                    ___________________________
+Dr. Jennifer Roberts                           Dr. Michael Chang
+Dean, College of Engineering                   Department Chair, Computer Science
+
+Official Seal: University of California, Berkeley
+Established 1868

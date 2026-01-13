@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-01-12T21:37:35.895038",
+  "certificate": {
+    "raw_text": "UNIVERSITY OF CALIFORNIA, BERKELEY\nCollege of Engineering\n\nBACHELOR OF SCIENCE DEGREE CERTIFICATE\n\nThis is to certify that\n\nSARAH CHEN\n\nhas successfully completed all requirements for the degree of\nBACHELOR OF SCIENCE IN COMPUTER SCIENCE\n\nConferred on: May 15, 2023\n\nAcademic Performance:\n- Cumulative GPA: 3.87 / 4.00\n- Major GPA: 3.92 / 4.00\n- Total Units Completed: 128 semester units\n\nHonors and Distinctions:\n- Dean's List: Fall 2020, Spring 2021, Fall 2021, Spring 2022, Fall 2022, Spring 2023\n- Graduated with High Honors\n- Recipient of the Outstanding Senior Award in Computer Science\n- Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n\nMajor Coursework Highlights:\n- Artificial Intelligence and Machine Learning\n- Distributed Systems and Cloud Computing\n- Computer Security and Cryptography\n- Software Engineering and Development\n- Data Structures and Algorithms\n- Operating Systems Design\n\nResearch Experience:\n- Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab\n- Published paper: \"Deep Learning Approaches for Natural Language Understanding\"\n- Senior Capstone Project: \"Scalable Machine Learning Infrastructure for Healthcare\"\n\nExtracurricular Activities:\n- Vice President, Association for Computing Machinery (ACM) Student Chapter\n- Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs\n- Google Summer of Code Participant (2022)\n\nDate of Birth: March 12, 2001\nStudent ID: 3045892341\n\nThis certificate is issued under the authority of the University of California Board of Regents.\n\nDigitally verified on: May 15, 2023\nCertificate ID: UCB-ENG-CS-2023-001847\n\n___________________________                    ___________________________\nDr. Jennifer Roberts                           Dr. Michael Chang\nDean, College of Engineering                   Department Chair, Computer Science\n\nOfficial Seal: University of California, Berkeley\nEstablished 1868\n",
+    "extracted_fields": {
+      "Name": "SARAH CHEN",
+      "Degree": "Bachelor of Science in Computer Science",
+      "Date of Conferment": "May 15, 2023",
+      "Major GPA": "3.92",
+      "Cumulative GPA": "3.87",
+      "Total Units Completed": "128 semester units",
+      "Honors": "Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)",
+      "Research Experience": "Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare",
+      "Extracurricular Activities": "Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022)",
+      "Date of Birth": "March 12, 2001",
+      "Student ID": "3045892341"
+    },
+    "confidence": {
+      "Name": 0.98,
+      "Degree": 0.97,
+      "Date of Conferment": 0.95,
+      "Major GPA": 0.95,
+      "Cumulative GPA": 0.95,
+      "Total Units Completed": 0.9,
+      "Honors": 0.85,
+      "Research Experience": 0.8,
+      "Extracurricular Activities": 0.8,
+      "Date of Birth": 0.9,
+      "Student ID": 0.9
+    }
+  },
+  "evaluation": {
+    "criteria": {
+      "GPA": 0.4,
+      "Institution Reputation": 0.3,
+      "Degree Type": 0.3
+    },
+    "scores": {
+      "GPA": 38.0,
+      "Institution Reputation": 9.0,
+      "Degree Type": 29.099999999999998
+    },
+    "final_score": 76.1
+  },
+  "conversation": {
+    "last_user_message": "Score my certificate",
+    "last_agent_message": "\u2713 Certificate re-scored based on current criteria:\n\n  - GPA: 38.0 (weight: 0.40)\n  - Institution Reputation: 9.0 (weight: 0.30)\n  - Degree Type: 29.1 (weight: 0.30)\n\n**Final Weighted Score: 76.1/100**\n\ud83d\udcad [Decision: rescore] User wants to calculate numerical scores and criteria are already set in Evaluation State",
+    "last_reason": "User wants to calculate numerical scores and criteria are already set in Evaluation State",
+    "uncertainty": "",
+    "last_user_intent": "",
+    "pending_confirmation": true,
+    "conversation_history": [
+      {
+        "user": "Explain your reasoning",
+        "agent": "**Decision Explanation:**\n\n**Reason for last step:** User provided a greeting and asked for explanation, should welcome them and explain capabilities\n\n**Uncertainty:** None identified\n\n**Extracted Data:**\n  - No data extracted yet\n\n**Current Score:** 0.0/100\n",
+        "action": "explain"
+      },
+      {
+        "user": "Score my certificate",
+        "agent": "\u26a0\ufe0f **No evaluation criteria set yet!**\n\nTo calculate scores, I need to know what criteria to use.\n\n**Please tell me what factors to evaluate, for example:**\n\u2022 'Set criteria to GPA 40%, Research 30%, Leadership 30%'\n\u2022 'Evaluate based on GPA, Institution, and Degree'\n\u2022 'Use GPA and Research as criteria'\n\nYou can specify weights (percentages) or I'll distribute them equally.\n\nWhat criteria would you like to use? \ud83c\udfaf",
+        "action": "ask_clarification"
+      },
+      {
+        "user": "Extract information from my certificate",
+        "agent": "\u2713 Extracted certificate information:\n  - Name: SARAH CHEN\n  - Degree: Bachelor of Science in Computer Science\n  - Date of Conferment: May 15, 2023\n  - Major GPA: 3.92\n  - Cumulative GPA: 3.87\n  - Total Units Completed: 128 semester units\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022)\n  - Date of Birth: March 12, 2001\n  - Student ID: 3045892341\n\nConfidence levels:\n  - Name: 98.0%\n  - Degree: 97.0%\n  - Date of Conferment: 95.0%\n  - Major GPA: 95.0%\n  - Cumulative GPA: 95.0%\n  - Total Units Completed: 90.0%\n  - Honors: 85.0%\n  - Research Experience: 80.0%\n  - Extracurricular Activities: 80.0%\n  - Date of Birth: 90.0%\n  - Student ID: 90.0%",
+        "action": "extract_information"
+      },
+      {
+        "user": "Change criteria weights",
+        "agent": "\u2713 Set 3 evaluation criteria with weights\n\n**Active Evaluation Criteria:**\n  - GPA: weight=0.40\n  - Institution Reputation: weight=0.30\n  - Degree Type: weight=0.30\n\nThe certificate will now be evaluated based on these criteria.\nYou can modify criteria anytime or ask me to re-score the certificate.",
+        "action": "validate_criteria"
+      },
+      {
+        "user": "Extract information from my certificate",
+        "agent": "\u2713 Using previously extracted certificate information:\n  - Name: SARAH CHEN\n  - Degree: Bachelor of Science in Computer Science\n  - Date of Conferment: May 15, 2023\n  - Major GPA: 3.92\n  - Cumulative GPA: 3.87\n  - Total Units Completed: 128 semester units\n  - Honors: Graduated with High Honors, Recipient of the Outstanding Senior Award in Computer Science, Member of Eta Kappa Nu (Electrical Engineering and Computer Science Honor Society)\n  - Research Experience: Undergraduate Research Assistant, Berkeley AI Research (BAIR) Lab, Published paper: Deep Learning Approaches for Natural Language Understanding, Senior Capstone Project: Scalable Machine Learning Infrastructure for Healthcare\n  - Extracurricular Activities: Vice President, Association for Computing Machinery (ACM) Student Chapter, Teaching Assistant for CS 61A: Structure and Interpretation of Computer Programs, Google Summer of Code Participant (2022)\n  - Date of Birth: March 12, 2001\n  - Student ID: 3045892341\n\nConfidence levels:\n  - Name: 98.0%\n  - Degree: 97.0%\n  - Date of Conferment: 95.0%\n  - Major GPA: 95.0%\n  - Cumulative GPA: 95.0%\n  - Total Units Completed: 90.0%\n  - Honors: 85.0%\n  - Research Experience: 80.0%\n  - Extracurricular Activities: 80.0%\n  - Date of Birth: 90.0%\n  - Student ID: 90.0%\n\n(Data was cached from previous extraction. Say 're-extract' to force fresh extraction.)",
+        "action": "extract_information"
+      },
+      {
+        "user": "Score my certificate",
+        "agent": "\u2713 Certificate re-scored based on current criteria:\n\n  - GPA: 38.0 (weight: 0.40)\n  - Institution Reputation: 9.0 (weight: 0.30)\n  - Degree Type: 29.1 (weight: 0.30)\n\n**Final Weighted Score: 76.1/100**",
+        "action": "rescore"
+      }
+    ],
+    "reasoning_history": [
+      {
+        "decision": "explain",
+        "reason": "User provided a greeting and asked for explanation, should welcome them and explain capabilities",
+        "uncertainty": "",
+        "context": "User said: Explain your reasoning"
+      },
+      {
+        "decision": "ask_clarification",
+        "reason": "User wants to score their certificate but no evaluation criteria have been set yet - need to ask what criteria to use",
+        "uncertainty": "No evaluation criteria defined",
+        "context": "User said: Score my certificate"
+      },
+      {
+        "decision": "extract_information",
+        "reason": "User explicitly requested extraction and no fields are extracted yet in Certificate State",
+        "uncertainty": "",
+        "context": "User said: Extract information from my certificate"
+      },
+      {
+        "decision": "validate_criteria",
+        "reason": "User wants to change criteria weights, which implies setting or changing evaluation criteria - this is the best next action",
+        "uncertainty": "",
+        "context": "User said: Change criteria weights"
+      },
+      {
+        "decision": "extract_information",
+        "reason": "User explicitly requested extraction and 11 fields are already extracted in Certificate State, but the user is asking to re-extract information, which means we should re-extract and update the state",
+        "uncertainty": "",
+        "context": "User said: Extract information from my certificate"
+      },
+      {
+        "decision": "rescore",
+        "reason": "User wants to calculate numerical scores and criteria are already set in Evaluation State",
+        "uncertainty": "",
+        "context": "User said: Score my certificate"
+      }
+    ]
+  }
+}
