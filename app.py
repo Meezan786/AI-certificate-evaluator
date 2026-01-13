@@ -441,6 +441,6 @@ with col3:
 # Footer
 st.markdown("---")
 st.markdown(
-    "<p style='text-align: center; color: #999; font-size: 0.9rem;'>Built with ❤️ using LangChain, LangGraph, and Streamlit | Fully Agentic System</p>",
+    "<p style='text-align: center; color: #999; font-size: 0.9rem;'>Built by MEEZAN using LangChain, LangGraph, and Streamlit | Fully Agentic System</p>",
     unsafe_allow_html=True,
 )

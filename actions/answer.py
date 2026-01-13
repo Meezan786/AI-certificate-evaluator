@@ -10,6 +10,48 @@ def answer_from_state(state):
     extracted_fields = state["certificate"].extracted_fields
     auto_extracted = False
 
+    # Handle existence/counting questions FIRST
+    is_there_question = any(
+        phrase in user_message
+        for phrase in ["is there", "are there", "any other", "another", "multiple"]
+    )
+
+    if is_there_question and extracted_fields:
+        # User is asking if there are multiple items or other items
+        if "student" in user_message:
+            name = extracted_fields.get("Name", "Unknown")
+            response = (
+                f"📋 **No, there is only ONE student on this certificate:**\n\n"
+                f"👤 **{name}**\n\n"
+                f"This is an individual degree certificate issued to a single student, "
+                f"not a list of multiple students.\n\n"
+                f"✓ *Answered from existing state (no re-extraction needed)*"
+            )
+        elif "certificate" in user_message:
+            response = (
+                f"📋 **We are currently analyzing ONE certificate.**\n\n"
+                f"The system is focused on evaluating a single certificate at a time. "
+                f"If you'd like to compare multiple certificates, please let me know!\n\n"
+                f"✓ *Answered from existing state (no re-extraction needed)*"
+            )
+        else:
+            response = (
+                f"📋 This certificate contains information about ONE student with multiple data fields.\n\n"
+                f"**Extracted fields:** {len(extracted_fields)}\n\n"
+                f"Would you like to know about specific information on the certificate?\n\n"
+                f"✓ *Answered from existing state (no re-extraction needed)*"
+            )
+
+        state["conversation"].last_agent_message = response
+        state["conversation"].conversation_history.append(
+            {
+                "user": state["conversation"].last_user_message,
+                "agent": state["conversation"].last_agent_message,
+                "action": "answer_from_state",
+            }
+        )
+        return state
+
     if not extracted_fields:
         # Import here to avoid circular dependency
         from actions.extract import extract_information
