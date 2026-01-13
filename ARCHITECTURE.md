@@ -4,20 +4,169 @@
 
 ---
 
-## 🔄 How It Works (Text Flow)
+## 🔄 How It Works (Text Flow with Code)
 
-**Simple 10-Step Process:**
+**Simple 10-Step Process with Actual Code Locations:**
 
-1. **User types message** → System receives input (e.g., "Extract my certificate")
-2. **Message stored** → Saved in `state["conversation"].last_user_message`
-3. **Agent activated** → `agent_node()` function called
-4. **Context built** → Combines current state + user message + history
-5. **LLM decides** → Groq/Gemini analyzes context and picks best action
-6. **LLM returns decision** → JSON: `{"next_action": "extract", "reason": "...", "uncertainty": "..."}`
-7. **Action routed** → System calls chosen action (e.g., `extract_information()`)
-8. **Action executes** → Performs task, updates state, creates response
-9. **State saved** → Auto-saved to disk for persistence
-10. **Response shown** → User sees result, loop repeats
+### **Step 1: User types message** 👤
+```python
+# File: main.py (line 80)
+user_input = input("\n💬 You: ")
+```
+**What happens:** Terminal waits for you to type
+
+---
+
+### **Step 2: Message stored** 💾
+```python
+# File: main.py (line 95)
+state["conversation"].last_user_message = user_input
+```
+**What happens:** Your message saved in conversation state
+
+---
+
+### **Step 3: Agent activated** 🤖
+```python
+# File: main.py (line 99)
+state = graph.invoke(state)
+
+# Which internally calls:
+# File: agent/agent.py (line 16)
+def agent_node(state):
+```
+**What happens:** Graph triggers the agent's brain
+
+---
+
+### **Step 4: Context built** 📋
+```python
+# File: agent/agent.py (lines 22-55)
+decision_prompt = f"""
+{AGENT_DECISION_PROMPT}
+
+User Input:
+{state["conversation"].last_user_message}
+
+Certificate State:
+- Extracted Fields COUNT: {extracted_count}
+- Fields: {list(state["certificate"].extracted_fields.keys())}
+
+Evaluation State:
+- Criteria COUNT: {criteria_count}
+- Criteria: {state["evaluation"].criteria}
+
+Conversation State:
+- History Length: {history_count}
+- Recent Context: {state["conversation"].conversation_history[-2:]}
+"""
+```
+**What happens:** Builds a detailed prompt with ALL context
+
+---
+
+### **Step 5: LLM decides** 🧠
+```python
+# File: agent/agent.py (lines 58-59)
+llm = get_llm_with_fallback()
+response = llm.invoke(decision_prompt)
+```
+**What happens:** Sends prompt to Groq/Gemini, LLM analyzes and decides
+
+---
+
+### **Step 6: LLM returns decision** 📨
+```python
+# File: agent/agent.py (lines 64-70)
+decision = safe_json_parse(
+    response.content,
+    fallback={
+        "next_action": "explain",
+        "reason": "Failed to parse decision",
+        "uncertainty": "LLM response was not valid JSON",
+    },
+)
+```
+**What happens:** Parses LLM's JSON response like:
+```json
+{
+  "next_action": "extract_information",
+  "reason": "User wants to extract certificate data",
+  "uncertainty": ""
+}
+```
+
+---
+
+### **Step 7: Action routed** 🎯
+```python
+# File: agent/agent.py (lines 85-103)
+action = decision.get("next_action", "explain")
+
+if action == "answer_from_state":
+    return answer_from_state(state)
+elif action == "show_history":
+    return show_history(state)
+elif action == "extract_information":
+    return extract_information(state)  # ← This one gets called!
+elif action == "rescore":
+    return rescore_certificate(state)
+# ... etc
+```
+**What happens:** Routes to the action LLM chose
+
+---
+
+### **Step 8: Action executes** ⚙️
+```python
+# File: actions/extract.py (lines 7-234)
+def extract_information(state):
+    # Check if data already exists
+    if extracted_fields and not force_reextract:
+        # Use cached data
+        state["conversation"].last_agent_message = "✓ Using cached..."
+    else:
+        # Actually extract
+        result = llm.invoke(prompt)
+        data = safe_json_parse(result.content)
+        state["certificate"].extracted_fields = data["fields"]
+        state["certificate"].confidence = data["confidence"]
+        state["conversation"].last_agent_message = "✓ Extracted..."
+    
+    return state
+```
+**What happens:** Extracts data, updates state, creates response
+
+---
+
+### **Step 9: State saved** 💾
+```python
+# File: main.py (line 148)
+state_manager.save_state(state)
+
+# Which calls:
+# File: utils/state_manager.py (lines 22-66)
+def save_state(self, state):
+    state_data = {
+        "certificate": {...},
+        "evaluation": {...},
+        "conversation": {...}
+    }
+    with open(self.current_session_file, "w") as f:
+        json.dump(state_data, f, indent=2)
+```
+**What happens:** Saves entire state to `session_data/current_session.json`
+
+---
+
+### **Step 10: Response shown** 📤
+```python
+# File: main.py (line 103)
+print(f"\n🤖 Agent: {state['conversation'].last_agent_message}")
+```
+**What happens:** Shows agent's response to you
+
+---
 
 **🎯 Key Insight:** Steps 5-6 are where the "agentic magic" happens - the LLM decides, not hardcoded logic!
 
@@ -412,4 +561,117 @@ streamlit run app.py
 
 ---
 
-**Built with ❤️ using LangChain, LangGraph, Groq, and Gemini**
+## 📚 All Libraries Used - Simple Explanations
+
+### **Core Libraries:**
+
+#### **1. `langchain`** 
+**What:** Framework for building LLM applications  
+**Why:** Provides structure for connecting to LLMs  
+**Used in:** `llm/llm_client.py`  
+**Simple:** The foundation that lets us talk to AI models
+
+#### **2. `langchain-google-genai`**
+**What:** LangChain integration for Google Gemini  
+**Why:** Lets us use Gemini LLM (free)  
+**Used in:** `llm/llm_client.py` (line 55)  
+**Simple:** Connects to Google's AI
+
+#### **3. `langchain-groq`**
+**What:** LangChain integration for Groq  
+**Why:** Lets us use Groq's fast LLMs (free)  
+**Used in:** `llm/llm_client.py` (line 39)  
+**Simple:** Connects to Groq's super-fast AI
+
+#### **4. `langgraph`**
+**What:** State machine framework for agents  
+**Why:** Manages state flow between actions  
+**Used in:** `graph/graph.py`  
+**Simple:** Keeps track of conversation state
+
+#### **5. `pydantic`**
+**What:** Data validation library  
+**Why:** Ensures state has correct structure  
+**Used in:** All `state/*.py` files  
+**Simple:** Makes sure data is organized properly
+
+#### **6. `python-dotenv`**
+**What:** Loads environment variables from `.env` file  
+**Why:** Keeps API keys secure  
+**Used in:** `llm/llm_client.py` (line 6), `app.py` (line 17)  
+**Simple:** Loads secrets safely
+
+#### **7. `streamlit`**
+**What:** Web UI framework  
+**Why:** Creates the pretty web interface  
+**Used in:** `app.py` (entire file)  
+**Simple:** Makes the beautiful web app
+
+---
+
+### **Python Built-in Libraries:**
+
+#### **8. `json`**
+**What:** Parse JSON data  
+**Why:** LLM returns decisions as JSON  
+**Used in:** Many files for parsing responses  
+**Simple:** Reads AI's structured responses
+
+#### **9. `os`**
+**What:** Operating system functions  
+**Why:** Read environment variables, file paths  
+**Used in:** `llm/llm_client.py`, `utils/state_manager.py`  
+**Simple:** Talks to your computer
+
+#### **10. `pathlib`**
+**What:** Modern file path handling  
+**Why:** Better than string paths  
+**Used in:** `utils/state_manager.py` (line 4)  
+**Simple:** Handles file locations smartly
+
+#### **11. `datetime`**
+**What:** Date and time functions  
+**Why:** Timestamp sessions  
+**Used in:** `utils/state_manager.py` (line 3)  
+**Simple:** Knows what time it is
+
+#### **12. `typing`**
+**What:** Type hints (Dict, List, etc.)  
+**Why:** Makes code clearer and safer  
+**Used in:** All state files  
+**Simple:** Labels what type of data we're using
+
+#### **13. `re`**
+**What:** Regular expressions  
+**Why:** Pattern matching in JSON parsing  
+**Used in:** `llm/json_utils.py` (line 2)  
+**Simple:** Finds patterns in text
+
+---
+
+### **📦 Quick Reference Table:**
+
+| Library | Purpose | Simple Explanation |
+|---------|---------|-------------------|
+| **LangChain** | LLM Framework | Talks to AI models |
+| **LangGraph** | State Manager | Manages conversation state |
+| **Pydantic** | Data Validator | Keeps data organized |
+| **Streamlit** | Web UI | Makes pretty interface |
+| **python-dotenv** | Config Loader | Loads API keys securely |
+| **langchain-groq** | Groq Integration | Connects to Groq AI |
+| **langchain-google-genai** | Gemini Integration | Connects to Google AI |
+| **json** | Data Parser | Reads AI responses |
+| **os/pathlib** | File Handler | Saves/loads files |
+| **datetime** | Time Functions | Timestamps sessions |
+| **typing** | Type Hints | Labels data types |
+| **re** | Pattern Matching | Finds text patterns |
+
+---
+
+### **🎯 In One Sentence:**
+
+> "We use **LangChain** to talk to **Groq/Gemini** LLMs, **LangGraph** to manage state, **Pydantic** to structure data, **Streamlit** for the UI, and built-in Python libraries for basic operations like JSON parsing and file handling."
+
+---
+
+**A Project Done By MEEZAN using LangChain, LangGraph, Groq, and Gemini**
